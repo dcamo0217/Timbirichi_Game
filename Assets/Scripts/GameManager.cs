@@ -1,7 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
+using TMPro;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
@@ -9,9 +10,14 @@ public class GameManager : MonoBehaviour
     private int contPlayer1=2;
     private int contPlayer2=2;
 
+    public TextMesh playerName;
+
+
+
     private void Awake()
     {
         Instance = this;
+        playerName.text="Player 1";
     }
 
     void Start()
@@ -53,8 +59,10 @@ public class GameManager : MonoBehaviour
                 UpdateGameState(GameState.player1);
                 break;
             case GameState.player1:
+                playerName.text="Player 1";
                 break;
             case GameState.player2:
+                playerName.text="Player 2";
                 break;
             case GameState.end:
                 break;

@@ -47,6 +47,7 @@ public class BoardManager : MonoBehaviour
             }
         }
         var center = new Vector2((float)Height/2 - 0.5f, (float)Width/2 - 0.5f);
+        Camera.main.orthographicSize = (float)Height/ 2 + 1.5f;
         Camera.main.transform.position = new Vector3(center.x, center.y, -5);
 
     }
